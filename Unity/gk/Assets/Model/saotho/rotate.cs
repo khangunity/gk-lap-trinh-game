@@ -1,21 +1,18 @@
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Controll : MonoBehaviour
+public class rotate : MonoBehaviour
 {
-    public bool playing;
+    public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playing = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playing)
-        {
-            
-        }
+        transform.Rotate(0, 0, speed * Time.deltaTime);
     }
 }
