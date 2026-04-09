@@ -11,8 +11,6 @@ public class Shoot : MonoBehaviour
 
     public GameObject laser;
     public GameObject laserCham;
-    public GameObject dau;
-    public GameObject sung;
 
     void Start()
     {
@@ -51,6 +49,10 @@ public class Shoot : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
             targetPoint = hit.point;
+            if(hit.transform.tag == "thienthach")
+            {
+                hit.transform.gameObject.SetActive(false);
+            }
         }
         else
         {
@@ -70,11 +72,5 @@ public class Shoot : MonoBehaviour
 
         laser.transform.position = gunPoint.position;
         laser.transform.forward = direction;
-
-        dau.transform.forward = -direction;
-        dau.transform.Rotate(dau.transform.rotation.x, 0, 0);
-        Debug.Log(dau.transform.rotation);
-        sung.transform.forward = -direction;
-        sung.transform.Rotate(0, 0, 0);
     }
 }

@@ -70,7 +70,7 @@ public class Spline : MonoBehaviour
         transform.position = pos + right * offset;
 
         // ===== 7. XOAY THEO HƯỚNG BAY =====
-        //transform.rotation = Quaternion.LookRotation(forward);
+        transform.rotation = Quaternion.LookRotation(forward);
     }
 
     // ===== HÀM TÍNH VỊ TRÍ TRÊN SPLINE =====
