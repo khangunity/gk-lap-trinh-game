@@ -51,7 +51,7 @@ public class Shoot : MonoBehaviour
             targetPoint = hit.point;
             if(hit.transform.tag == "thienthach")
             {
-                hit.transform.gameObject.SetActive(false);
+                Destroy(hit.transform.gameObject);
             }
         }
         else
