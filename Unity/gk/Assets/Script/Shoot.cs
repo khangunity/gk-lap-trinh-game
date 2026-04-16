@@ -12,6 +12,8 @@ public class Shoot : MonoBehaviour
     public GameObject laser;
     public GameObject laserCham;
 
+    public GameObject thienthachno;
+
     void Start()
     {
         line = GetComponent<LineRenderer>();
@@ -52,6 +54,9 @@ public class Shoot : MonoBehaviour
             if(hit.transform.tag == "thienthach")
             {
                 Destroy(hit.transform.gameObject);
+                thienthachno.transform.position = hit.transform.position;
+                thienthachno.SetActive(false);
+                thienthachno.SetActive(true);
             }
         }
         else
